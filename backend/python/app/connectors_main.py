@@ -137,6 +137,11 @@ async def resume_sync_services(app_container: ConnectorAppContainer) -> bool:
                         # Store using both the original name and the processed name for compatibility
                         app_container.connectors_map[app["name"]] = connector
                         app_container.connectors_map[connector_name] = connector
+                        # Also store with underscore format for router lookup (enum value transformation)
+                        # e.g., "Local Filesystem" -> both "localfilesystem" and "local_filesystem"
+                        underscore_name = app["name"].lower().replace(" ", "_")
+                        if underscore_name != connector_name:
+                            app_container.connectors_map[underscore_name] = connector
                         logger.info(f"{app['name']} connector initialized for org %s", org_id)
 
             if drive_sync_service is not None:

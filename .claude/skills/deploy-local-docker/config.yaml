@@ -1,0 +1,2 @@
+name: deploy-local-docker
+description: Deploy OilField application to local Docker containers with docker-compose. Includes building images, running migrations, and verifying services.

@@ -8,7 +8,7 @@ import eyeIcon from '@iconify-icons/mdi/eye-outline';
 import magnifyIcon from '@iconify-icons/mdi/magnify';
 import lightBulbIcon from '@iconify-icons/mdi/lightbulb-outline';
 import fileSearchIcon from '@iconify-icons/mdi/file-search-outline';
-import React, { useRef, useState, useEffect, useCallback } from 'react';
+import React, { useRef, useMemo, useState, useEffect, useCallback } from 'react';
 
 import {
   Box,
@@ -183,6 +183,23 @@ const KnowledgeSearch = ({
   const [loadingRecordId, setLoadingRecordId] = useState<string | null>(null);
   const previousQueryRef = useRef<string>('');
   const resultsContainerRef = useRef<HTMLDivElement | null>(null);
+
+  // Create a memoized connector icon map for O(1) lookups instead of O(n) find operations
+  // This prevents thousands of duplicate array searches when rendering many results
+  const connectorIconMap = useMemo(() => {
+    const map: { [key: string]: string } = {};
+    if (allConnectors && Array.isArray(allConnectors)) {
+      allConnectors.forEach((connector) => {
+        if (connector?.name && connector?.iconPath) {
+          // Store both original and uppercase keys for flexible lookup
+          map[connector.name] = connector.iconPath;
+          map[connector.name.toUpperCase()] = connector.iconPath;
+        }
+      });
+    }
+    return map;
+  }, [allConnectors]);
+
   // Synchronize searchQuery with parent component's state
   useEffect(() => {
     if (searchQuery !== searchInputValue) {
@@ -567,7 +584,11 @@ const KnowledgeSearch = ({
                 {searchResults.map((result, index) => {
                   if (!result?.metadata) return null;
 
-                  const iconPath = getSourceIcon(result, allConnectors);
+                  // Use memoized map for O(1) lookup instead of O(n) array find
+                  const connectorName = result.metadata.connector || '';
+                  const iconPath = connectorIconMap[connectorName] ||
+                                   connectorIconMap[connectorName.toUpperCase()] ||
+                                   '/assets/icons/connectors/default.svg';
                   const fileType = result.metadata.extension?.toUpperCase() || 'DOC';
                   const isViewable = isDocViewable(result.metadata.extension);
 

@@ -837,6 +837,59 @@ class ServiceNowConnector:
         print(f"Connecting to {self.name}")
         return True
 
+
+@ConnectorBuilder("Local Filesystem")\
+    .in_group("Local Filesystem")\
+    .with_auth_type("NONE")\
+    .with_description("Sync files from a local filesystem directory")\
+    .with_categories(["Storage", "Development"])\
+    .configure(lambda builder: builder
+        .with_icon("/assets/icons/connectors/filesystem.svg")
+        .with_realtime_support(True)
+        .add_documentation_link(DocumentationLink(
+            "Local Filesystem Setup",
+            "https://docs.pipeshub.com/connectors/local-filesystem",
+            "docs"
+        ))
+        .add_documentation_link(DocumentationLink(
+            'Pipeshub Documentation',
+            'https://docs.pipeshub.com/connectors/local-filesystem/setup',
+            'pipeshub'
+        ))
+        .with_redirect_uri("", False)
+        .add_auth_field(AuthField(
+            name="watch_path",
+            display_name="Watch Path",
+            placeholder="/data/local-files",
+            description="The directory path to watch for files (inside the container)",
+            field_type="TEXT",
+            max_length=1024
+        ))
+        .add_auth_field(AuthField(
+            name="debounce_seconds",
+            display_name="Debounce Seconds",
+            placeholder="1.0",
+            description="Seconds to wait before processing file changes (default: 1.0)",
+            field_type="TEXT",
+            max_length=10,
+            required=False
+        ))
+        .with_scheduled_config(True, 60)
+        .with_sync_strategies(["SCHEDULED", "MANUAL"])
+    )\
+    .build_decorator()
+class LocalFilesystemConnector:
+    """Local Filesystem connector built with the builder pattern"""
+
+    def __init__(self) -> None:
+        self.name = "Local Filesystem"
+
+    def connect(self) -> bool:
+        """Connect to Local Filesystem"""
+        print(f"Connecting to {self.name}")
+        return True
+
+
 @ConnectorBuilder("Zendesk")\
     .in_group("Zendesk")\
     .with_auth_type("API_TOKEN")\
