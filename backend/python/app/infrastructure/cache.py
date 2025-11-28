@@ -56,7 +56,10 @@ class VerificationCache:
 
     @classmethod
     async def create(
-        cls, redis_url: str, default_ttl: int = 86400, logger: Optional[logging.Logger] = None
+        cls,
+        redis_url: str,
+        default_ttl: int = 86400,
+        logger: Optional[logging.Logger] = None,
     ) -> "VerificationCache":
         """
         Create VerificationCache instance.
@@ -69,7 +72,9 @@ class VerificationCache:
         Returns:
             Initialized VerificationCache
         """
-        redis_client = await aioredis.from_url(redis_url, encoding="utf-8", decode_responses=True)
+        redis_client = await aioredis.from_url(
+            redis_url, encoding="utf-8", decode_responses=True
+        )
 
         # Test connection
         await redis_client.ping()
@@ -129,7 +134,9 @@ class VerificationCache:
             self.logger.error(f"Cache get error: {str(e)}")
             return None
 
-    async def set(self, content: str, result: Dict[str, Any], ttl: Optional[int] = None) -> bool:
+    async def set(
+        self, content: str, result: Dict[str, Any], ttl: Optional[int] = None
+    ) -> bool:
         """
         Store verification result in cache.
 
@@ -149,7 +156,8 @@ class VerificationCache:
             await self.redis_client.setex(cache_key, ttl_seconds, json.dumps(result))
 
             self.logger.debug(
-                f"✅ Cached result for chunk hash: {chunk_hash[:8]}... " f"(TTL: {ttl_seconds}s)"
+                f"✅ Cached result for chunk hash: {chunk_hash[:8]}... "
+                f"(TTL: {ttl_seconds}s)"
             )
             return True
 
@@ -174,7 +182,9 @@ class VerificationCache:
             deleted = await self.redis_client.delete(cache_key)
 
             if deleted:
-                self.logger.debug(f"✅ Invalidated cache for chunk hash: {chunk_hash[:8]}...")
+                self.logger.debug(
+                    f"✅ Invalidated cache for chunk hash: {chunk_hash[:8]}..."
+                )
             return bool(deleted)
 
         except Exception as e:

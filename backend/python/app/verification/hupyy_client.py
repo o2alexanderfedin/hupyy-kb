@@ -112,7 +112,9 @@ class HupyyClient:
                     chunk_index=request.chunk_index,
                     verdict=VerificationVerdict(cached_result["verdict"]),
                     confidence=cached_result["confidence"],
-                    formalization_similarity=cached_result.get("formalization_similarity"),
+                    formalization_similarity=cached_result.get(
+                        "formalization_similarity"
+                    ),
                     explanation=cached_result.get("explanation"),
                     metadata=cached_result.get("metadata", {}),
                     duration_seconds=time.time() - start_time,
@@ -123,7 +125,9 @@ class HupyyClient:
 
         # Make API call with circuit breaker
         try:
-            hupyy_response = await self.circuit_breaker.call(self._make_api_call, request)
+            hupyy_response = await self.circuit_breaker.call(
+                self._make_api_call, request
+            )
 
             duration = time.time() - start_time
 
@@ -180,7 +184,9 @@ class HupyyClient:
 
         except Exception as e:
             duration = time.time() - start_time
-            self.logger.error(f"Verification failed for request {request.request_id}: {str(e)}")
+            self.logger.error(
+                f"Verification failed for request {request.request_id}: {str(e)}"
+            )
             self.metrics.record_verification_request("failure", duration)
             self.metrics.record_chunk_processed("ERROR")
 
@@ -261,11 +267,17 @@ class HupyyClient:
             *[verify_with_semaphore(req) for req in requests], return_exceptions=False
         )
 
-        self.logger.info(f"✅ Completed parallel verification of {len(requests)} chunks")
+        self.logger.info(
+            f"✅ Completed parallel verification of {len(requests)} chunks"
+        )
         return results
 
     def chunk_content(
-        self, content: str, request_id: str, nl_query: str, source_document_id: Optional[str] = None
+        self,
+        content: str,
+        request_id: str,
+        nl_query: str,
+        source_document_id: Optional[str] = None,
     ) -> List[VerificationRequest]:
         """
         Split large content into chunks.

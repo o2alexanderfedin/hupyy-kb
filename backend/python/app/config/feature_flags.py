@@ -117,7 +117,11 @@ class FeatureFlagService:
             exists = await self.collection.find_one({"name": name})
             if not exists:
                 await self.collection.insert_one(
-                    {"name": name, "value": config["value"], "description": config["description"]}
+                    {
+                        "name": name,
+                        "value": config["value"],
+                        "description": config["description"],
+                    }
                 )
                 self.logger.info(f"✅ Initialized feature flag: {name}")
 
@@ -157,7 +161,9 @@ class FeatureFlagService:
         """
         try:
             result = await self.collection.update_one(
-                {"name": name}, {"$set": {"value": value, "description": description}}, upsert=True
+                {"name": name},
+                {"$set": {"value": value, "description": description}},
+                upsert=True,
             )
             self.logger.info(f"✅ Set feature flag: {name} = {value}")
             return True
@@ -174,9 +180,13 @@ class FeatureFlagService:
         """
         return VerificationFlags(
             verification_enabled=await self.get_flag("verification_enabled", False),
-            verification_ranking_weight=await self.get_flag("verification_ranking_weight", 0.0),
+            verification_ranking_weight=await self.get_flag(
+                "verification_ranking_weight", 0.0
+            ),
             verification_top_k=await self.get_flag("verification_top_k", 5),
-            verification_timeout_seconds=await self.get_flag("verification_timeout_seconds", 150),
+            verification_timeout_seconds=await self.get_flag(
+                "verification_timeout_seconds", 150
+            ),
             verification_cache_ttl=await self.get_flag("verification_cache_ttl", 86400),
         )
 

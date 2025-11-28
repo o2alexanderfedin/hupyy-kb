@@ -55,7 +55,9 @@ class KafkaTopicManager:
             True if connection successful, False otherwise
         """
         try:
-            self._admin_client = AIOKafkaAdminClient(bootstrap_servers=self.bootstrap_servers)
+            self._admin_client = AIOKafkaAdminClient(
+                bootstrap_servers=self.bootstrap_servers
+            )
             await self._admin_client.start()
             self.logger.info("✅ Connected to Kafka admin client")
             return True
@@ -133,7 +135,11 @@ class KafkaTopicManager:
             return False
 
         try:
-            topics = [self.VERIFY_CHUNKS, self.VERIFICATION_COMPLETE, self.VERIFICATION_FAILED]
+            topics = [
+                self.VERIFY_CHUNKS,
+                self.VERIFICATION_COMPLETE,
+                self.VERIFICATION_FAILED,
+            ]
             await self._admin_client.delete_topics(topics)
             self.logger.info("✅ Deleted verification topics")
             return True

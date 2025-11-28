@@ -37,7 +37,9 @@ class HupyyRequest(BaseModel):
     nl_query: str = Field(..., description="Natural language query")
     smt_query: str = Field(..., description="SMT-LIB formula")
     enrich: bool = Field(default=False, description="Always False - no enrichment")
-    timeout_seconds: int = Field(default=150, ge=1, le=300, description="Timeout (1-300s)")
+    timeout_seconds: int = Field(
+        default=150, ge=1, le=300, description="Timeout (1-300s)"
+    )
 
     @validator("enrich", always=True)
     def force_enrich_false(cls, v: bool) -> bool:
@@ -68,13 +70,21 @@ class HupyyResponse(BaseModel):
     """Response from Hupyy verification API."""
 
     verdict: VerificationVerdict = Field(..., description="Verification verdict")
-    confidence: float = Field(..., ge=0.0, le=1.0, description="Confidence score (0.0-1.0)")
+    confidence: float = Field(
+        ..., ge=0.0, le=1.0, description="Confidence score (0.0-1.0)"
+    )
     formalization_similarity: Optional[float] = Field(
         default=None, ge=0.0, le=1.0, description="Similarity between NL and SMT"
     )
-    explanation: Optional[str] = Field(default=None, description="Human-readable explanation")
-    metadata: Dict[str, Any] = Field(default_factory=dict, description="Additional metadata")
-    duration_ms: Optional[int] = Field(default=None, ge=0, description="Verification duration")
+    explanation: Optional[str] = Field(
+        default=None, description="Human-readable explanation"
+    )
+    metadata: Dict[str, Any] = Field(
+        default_factory=dict, description="Additional metadata"
+    )
+    duration_ms: Optional[int] = Field(
+        default=None, ge=0, description="Verification duration"
+    )
 
     class Config:
         """Pydantic config."""
@@ -99,8 +109,12 @@ class VerificationRequest(BaseModel):
     chunk_index: int = Field(default=0, ge=0, description="Chunk index (0-based)")
     total_chunks: int = Field(default=1, ge=1, description="Total number of chunks")
     nl_query: str = Field(..., description="Natural language query")
-    source_document_id: Optional[str] = Field(default=None, description="Source document ID")
-    timestamp: datetime = Field(default_factory=datetime.utcnow, description="Request timestamp")
+    source_document_id: Optional[str] = Field(
+        default=None, description="Source document ID"
+    )
+    timestamp: datetime = Field(
+        default_factory=datetime.utcnow, description="Request timestamp"
+    )
 
     @validator("content")
     def validate_content_size(cls, v: str) -> str:
@@ -166,13 +180,17 @@ class VerificationResult(BaseModel):
 class ChunkingConfig(BaseModel):
     """Configuration for input chunking."""
 
-    max_chunk_size_bytes: int = Field(default=10240, ge=1024, description="Max chunk size (10KB)")
+    max_chunk_size_bytes: int = Field(
+        default=10240, ge=1024, description="Max chunk size (10KB)"
+    )
     overlap_chars: int = Field(default=100, ge=0, description="Overlap between chunks")
 
     class Config:
         """Pydantic config."""
 
-        json_schema_extra = {"example": {"max_chunk_size_bytes": 10240, "overlap_chars": 100}}
+        json_schema_extra = {
+            "example": {"max_chunk_size_bytes": 10240, "overlap_chars": 100}
+        }
 
 
 class VerificationStats(BaseModel):

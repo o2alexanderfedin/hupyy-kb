@@ -37,7 +37,9 @@ class VerificationMetrics:
     - Load (queue depth)
     """
 
-    def __init__(self, namespace: str = "hupyy", logger: Optional[logging.Logger] = None) -> None:
+    def __init__(
+        self, namespace: str = "hupyy", logger: Optional[logging.Logger] = None
+    ) -> None:
         """
         Initialize verification metrics.
 
@@ -60,7 +62,19 @@ class VerificationMetrics:
             name=f"{namespace}_verification_duration_seconds",
             documentation="Verification request duration in seconds",
             labelnames=["status"],
-            buckets=[1.0, 5.0, 10.0, 30.0, 60.0, 90.0, 120.0, 150.0, 180.0, 240.0, 300.0],
+            buckets=[
+                1.0,
+                5.0,
+                10.0,
+                30.0,
+                60.0,
+                90.0,
+                120.0,
+                150.0,
+                180.0,
+                240.0,
+                300.0,
+            ],
         )
 
         # Success rate gauge
@@ -77,7 +91,8 @@ class VerificationMetrics:
 
         # Cache metrics
         self.cache_hit_rate = Gauge(
-            name=f"{namespace}_cache_hit_rate", documentation="Cache hit rate (0.0 to 1.0)"
+            name=f"{namespace}_cache_hit_rate",
+            documentation="Cache hit rate (0.0 to 1.0)",
         )
 
         self.cache_operations_total = Counter(
@@ -100,7 +115,9 @@ class VerificationMetrics:
         )
 
         # System info
-        self.system_info = Info(name=f"{namespace}_system_info", documentation="System information")
+        self.system_info = Info(
+            name=f"{namespace}_system_info", documentation="System information"
+        )
 
         # Initialize counters
         self._total_requests = 0
@@ -119,7 +136,9 @@ class VerificationMetrics:
             duration_seconds: Request duration
         """
         self.verification_requests_total.labels(status=status).inc()
-        self.verification_duration_seconds.labels(status=status).observe(duration_seconds)
+        self.verification_duration_seconds.labels(status=status).observe(
+            duration_seconds
+        )
 
         # Update running totals for success rate
         self._total_requests += 1
@@ -206,7 +225,9 @@ class VerificationMetrics:
             "cache_requests": self._cache_requests,
             "cache_hits": self._cache_hits,
             "cache_hit_rate": (
-                self._cache_hits / self._cache_requests if self._cache_requests > 0 else 0.0
+                self._cache_hits / self._cache_requests
+                if self._cache_requests > 0
+                else 0.0
             ),
         }
 
