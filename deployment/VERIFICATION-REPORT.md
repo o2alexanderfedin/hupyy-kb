@@ -214,7 +214,8 @@ healthcheck:
 
 1. **Test LLM Functionality**:
    - Open http://localhost:3000 in browser
-   - Log in with: af@o2.services / Vilisaped1!
+   - Log in with: test@example.com
+   - **Note**: The test user's orgId (`6929b83ca78b2651fdf1b04a`) matches the indexed files
    - Navigate to chat interface
    - Verify "Enable SMT Verification" checkbox is visible below message input
    - Test checkbox functionality (click to enable/disable)
