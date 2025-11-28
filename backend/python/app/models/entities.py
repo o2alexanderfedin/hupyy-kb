@@ -115,9 +115,9 @@ class Record(BaseModel):
             "isShared": self.is_shared,
         }
 
-        # Add block_containers if populated (handle empty gracefully)
-        if self.block_containers and (self.block_containers.blocks or self.block_containers.block_groups):
-            base_dict["blockContainers"] = self.block_containers.model_dump(mode='json')
+        # NOTE: blockContainers is NOT part of the records collection schema
+        # Block content should be stored separately (e.g., in blocks collection or file storage)
+        # The schema has additionalProperties=false, so we cannot add extra fields
 
         return base_dict
 
