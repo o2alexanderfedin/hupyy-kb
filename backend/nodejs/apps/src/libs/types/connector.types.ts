@@ -16,6 +16,7 @@ export enum ConnectorId {
     DROPBOX = 'dropbox',
     BOX = 'box',
     UPLOAD = 'upload',
+    LOCAL_FILESYSTEM = 'localFilesystem',
   }
   
   export enum ConnectorNames {
@@ -36,6 +37,7 @@ export enum ConnectorId {
     DROPBOX = 'Dropbox',
     BOX = 'Box',
     UPLOAD = 'Uploaded Files',
+    LOCAL_FILESYSTEM = 'Local Filesystem',
   }
   
   export const ConnectorIdToNameMap: Record<ConnectorId, string> = {
@@ -56,4 +58,5 @@ export enum ConnectorId {
     [ConnectorId.DROPBOX]: ConnectorNames.DROPBOX,
     [ConnectorId.BOX]: ConnectorNames.BOX,
     [ConnectorId.UPLOAD]: ConnectorNames.UPLOAD,
+    [ConnectorId.LOCAL_FILESYSTEM]: ConnectorNames.LOCAL_FILESYSTEM,
   };

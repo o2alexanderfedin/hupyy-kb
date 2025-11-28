@@ -53,6 +53,8 @@ class Connectors(Enum):
 
     SERVICENOW = "SERVICENOW"
 
+    LOCAL_FILESYSTEM = "LOCAL_FILESYSTEM"
+
     UNKNOWN = "UNKNOWN"
 
 class AppGroups(Enum):
@@ -64,6 +66,7 @@ class AppGroups(Enum):
     SERVICENOW = "Servicenow"
     WEB = "Web"
     BOOKSTACK = "BookStack"
+    LOCAL_FILESYSTEM = "Local Filesystem"
 
 class OriginTypes(Enum):
     CONNECTOR = "CONNECTOR"
