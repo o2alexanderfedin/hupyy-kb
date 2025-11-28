@@ -116,8 +116,8 @@ class RecordEventHandler(BaseEventService):
                 await self.event_processor.processor.indexing_pipeline.delete_embeddings(record_id, virtual_record_id)
 
             if record is None:
-                self.logger.error(f"❌ Record {record_id} not found in database")
-                return False
+                self.logger.warning(f"⚠️ Record {record_id} not found in database - may be from failed insert (schema error)")
+                return True  # Treat as success to commit offset and move on
 
             if virtual_record_id is None:
                 virtual_record_id = record.get("virtualRecordId")
