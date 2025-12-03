@@ -82,7 +82,7 @@ services:
       - hupyy_root_local:/root/.local
       # Mount local files for Local Filesystem connector
       # Change the host path to your desired directory
-      - ${LOCAL_FILES_PATH:-/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig}:/data/local-files:ro
+      - ${LOCAL_FILES_PATH:-./data/local-files}:/data/local-files:ro
 
     extra_hosts:
       - "host.docker.internal:host-gateway"

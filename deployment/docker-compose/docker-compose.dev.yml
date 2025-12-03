@@ -100,7 +100,7 @@ services:
     volumes:
       - hupyy_data:/data/hupyy
       - hupyy_root_local:/root/.local
-      - /Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig:/data/local-files:ro
+      - /Users/alexanderfedin/Projects/hapyy/hupyy-kb:/data/local-files:ro
     extra_hosts:
       - "host.docker.internal:host-gateway"
 

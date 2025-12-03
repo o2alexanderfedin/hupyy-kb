@@ -103,11 +103,14 @@ The project uses multiple databases:
 ## Hupyy KB Configuration
 
 ### Docker Volume Mounts
-- **Host Path**: `/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig`
+- **Host Path**: `/Users/alexanderfedin/Projects/hapyy/hupyy-kb` (development)
+- **Host Path**: `${LOCAL_FILES_PATH:-./data/local-files}` (production - configurable via environment variable)
 - **Container Path**: `/data/local-files`
 - **Mode**: Read-only (`:ro`)
 
 This mount makes the project directory available to the Local Filesystem connector for indexing.
+
+**Note**: For production deployments, create a `data/local-files` directory in your deployment location or set the `LOCAL_FILES_PATH` environment variable to point to your desired source directory.
 
 ### Application Credentials
 - **Email**: af@o2.services
