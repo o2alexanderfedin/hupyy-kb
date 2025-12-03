@@ -315,8 +315,8 @@ class ConfluenceClient:
         ))
         .add_documentation_link(DocumentationLink(
             'Pipeshub Documentation',
-            'https://docs.pipeshub.com/connectors/confluence/confluence',
-            'pipeshub'
+            'https://docs.hupyy.com/connectors/confluence/confluence',
+            'hupyy'
         ))
         .with_redirect_uri("connectors/oauth/callback/Confluence", False)
         .add_auth_field(AuthField(

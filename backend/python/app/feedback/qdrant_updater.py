@@ -249,7 +249,7 @@ async def main():
     kafka_brokers = os.getenv("KAFKA_BROKERS", "localhost:9092")
     qdrant_host = os.getenv("QDRANT_HOST", "localhost")
     qdrant_port = int(os.getenv("QDRANT_PORT", "6333"))
-    collection_name = os.getenv("QDRANT_COLLECTION", "pipeshub_chunks")
+    collection_name = os.getenv("QDRANT_COLLECTION", "hupyy_chunks")
 
     qdrant_client = AsyncQdrantClient(host=qdrant_host, port=qdrant_port)
 

@@ -114,7 +114,7 @@ def main() -> None:
     # Extract user_login, owner, and repo from authenticated user data
     user_login = auth_res.data.login
     owner = user_login  # Use the same user as owner
-    repo = "pipeshub-ai"  # Use this repository for testing, fork this repository to your account and give a star :D
+    repo = "hupyy-kb"  # Use this repository for testing, fork this repository to your account and give a star :D
 
     # Fetch a specific user
     user_res = ds.get_user(user_login)

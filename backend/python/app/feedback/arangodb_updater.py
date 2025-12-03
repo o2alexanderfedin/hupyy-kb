@@ -272,7 +272,7 @@ async def main():
     arango_url = os.getenv("ARANGO_URL", "http://localhost:8529")
     arango_username = os.getenv("ARANGO_USERNAME", "root")
     arango_password = os.getenv("ARANGO_PASSWORD", "")
-    arango_db_name = os.getenv("ARANGO_DB", "pipeshub")
+    arango_db_name = os.getenv("ARANGO_DB", "hupyy")
 
     client = ArangoClient(hosts=arango_url)
     db = client.db(arango_db_name, username=arango_username, password=arango_password)

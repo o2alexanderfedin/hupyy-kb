@@ -1,5 +1,5 @@
 """
-Root conftest.py for PipesHub AI Python tests
+Root conftest.py for Hupyy KB AI Python tests
 
 This file contains shared fixtures and configuration for all Python tests.
 Fixtures defined here are available to all test files.
@@ -40,7 +40,7 @@ def pytest_configure(config):
     logs_dir.mkdir(exist_ok=True)
 
     print("\n" + "=" * 80)
-    print("PipesHub AI Test Suite")
+    print("Hupyy KB AI Test Suite")
     print("=" * 80)
 
 

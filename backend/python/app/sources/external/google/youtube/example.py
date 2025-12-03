@@ -41,10 +41,10 @@ async def main() -> None:
     # 1) Get the channel by handle (use forHandle, not id)
     ch = await google_youtube_data_source.channels_list(
         part="id,contentDetails",
-        forHandle="@PipesHub-GenAI",
+        forHandle="@Hupyy KB-GenAI",
     )
     if not ch["items"]:
-        raise RuntimeError("Channel not found for handle @PipesHub-GenAI")
+        raise RuntimeError("Channel not found for handle @Hupyy KB-GenAI")
 
     channel = ch["items"][0]
     channel_id = channel["id"]

@@ -22,8 +22,8 @@ from app.connectors.core.registry.connector_builder import (
         ))
         .add_documentation_link(DocumentationLink(
             'Pipeshub Documentation',
-            'https://docs.pipeshub.com/connectors/google-workspace/drive/drive',
-            'pipeshub'
+            'https://docs.hupyy.com/connectors/google-workspace/drive/drive',
+            'hupyy'
         ))
         .with_redirect_uri("connectors/oauth/callback/Drive", True)
         .with_oauth_urls(
@@ -77,8 +77,8 @@ class GoogleDriveConnector:
         ))
         .add_documentation_link(DocumentationLink(
             'Pipeshub Documentation',
-            'https://docs.pipeshub.com/connectors/google-workspace/gmail/gmail',
-            'pipeshub'
+            'https://docs.hupyy.com/connectors/google-workspace/gmail/gmail',
+            'hupyy'
         ))
         .with_redirect_uri("connectors/oauth/callback/Gmail", True)
         .with_oauth_urls(
@@ -129,8 +129,8 @@ class GmailConnector:
         ))
         .add_documentation_link(DocumentationLink(
             'Pipeshub Documentation',
-            'https://docs.pipeshub.com/connectors/slack/slack',
-            'pipeshub'
+            'https://docs.hupyy.com/connectors/slack/slack',
+            'hupyy'
         ))
         .with_redirect_uri("", False)
         .add_auth_field(AuthField(
@@ -174,8 +174,8 @@ class SlackConnector:
         ))
         .add_documentation_link(DocumentationLink(
             'Pipeshub Documentation',
-            'https://docs.pipeshub.com/connectors/notion/notion',
-            'pipeshub'
+            'https://docs.hupyy.com/connectors/notion/notion',
+            'hupyy'
         ))
         .with_redirect_uri("", False)
         .add_auth_field(AuthField(
@@ -219,8 +219,8 @@ class  NotionConnector:
         ))
         .add_documentation_link(DocumentationLink(
             'Pipeshub Documentation',
-            'https://docs.pipeshub.com/connectors/google-workspace/calendar/calendar',
-            'pipeshub'
+            'https://docs.hupyy.com/connectors/google-workspace/calendar/calendar',
+            'hupyy'
         ))
         .with_redirect_uri("connectors/oauth/callback/Calendar", True)
         .with_oauth_urls(
@@ -266,8 +266,8 @@ class CalendarConnector:
         ))
         .add_documentation_link(DocumentationLink(
             'Pipeshub Documentation',
-            'https://docs.pipeshub.com/connectors/google-workspace/meet/meet',
-            'pipeshub'
+            'https://docs.hupyy.com/connectors/google-workspace/meet/meet',
+            'hupyy'
         ))
         .with_redirect_uri("connectors/oauth/callback/Meet", True)
         .with_oauth_urls(
@@ -315,8 +315,8 @@ class MeetConnector:
         ))
         .add_documentation_link(DocumentationLink(
             'Pipeshub Documentation',
-            'https://docs.pipeshub.com/connectors/google-workspace/docs/docs',
-            'pipeshub'
+            'https://docs.hupyy.com/connectors/google-workspace/docs/docs',
+            'hupyy'
         ))
         .with_redirect_uri("connectors/oauth/callback/Docs", True)
         .with_oauth_urls(
@@ -364,8 +364,8 @@ class DocsConnector:
         ))
         .add_documentation_link(DocumentationLink(
             'Pipeshub Documentation',
-            'https://docs.pipeshub.com/connectors/google-workspace/sheets/sheets',
-            'pipeshub'
+            'https://docs.hupyy.com/connectors/google-workspace/sheets/sheets',
+            'hupyy'
         ))
         .with_redirect_uri("connectors/oauth/callback/Sheets", True)
         .with_oauth_urls(
@@ -409,8 +409,8 @@ class SheetsConnector:
         ))
         .add_documentation_link(DocumentationLink(
             'Pipeshub Documentation',
-            'https://docs.pipeshub.com/connectors/google-workspace/forms/forms',
-            'pipeshub'
+            'https://docs.hupyy.com/connectors/google-workspace/forms/forms',
+            'hupyy'
         ))
         .with_redirect_uri("connectors/oauth/callback/Forms", True)
         .with_oauth_urls(
@@ -458,8 +458,8 @@ class FormsConnector:
         ))
         .add_documentation_link(DocumentationLink(
             'Pipeshub Documentation',
-            'https://docs.pipeshub.com/connectors/google-workspace/slides/slides',
-            'pipeshub'
+            'https://docs.hupyy.com/connectors/google-workspace/slides/slides',
+            'hupyy'
         ))
         .with_redirect_uri("connectors/oauth/callback/Slides", True)
         .with_oauth_urls(
@@ -505,8 +505,8 @@ class SlidesConnector:
         ))
         .add_documentation_link(DocumentationLink(
             'Pipeshub Documentation',
-            'https://docs.pipeshub.com/connectors/airtable/airtable',
-            'pipeshub'
+            'https://docs.hupyy.com/connectors/airtable/airtable',
+            'hupyy'
         ))
         .with_redirect_uri("", False)
         .add_auth_field(AuthField(
@@ -548,8 +548,8 @@ class AirtableConnector:
         ))
         .add_documentation_link(DocumentationLink(
             'Pipeshub Documentation',
-            'https://docs.pipeshub.com/connectors/azure/azureblob',
-            'pipeshub'
+            'https://docs.hupyy.com/connectors/azure/azureblob',
+            'hupyy'
         ))
         .with_redirect_uri("", False)
         .add_auth_field(AuthField(
@@ -623,8 +623,8 @@ class AzureBlobConnector:
         ))
         .add_documentation_link(DocumentationLink(
             'Pipeshub Documentation',
-            'https://docs.pipeshub.com/connectors/bookstack/bookstack',
-            'pipeshub'
+            'https://docs.hupyy.com/connectors/bookstack/bookstack',
+            'hupyy'
         ))
         .with_redirect_uri("", False)
         .add_auth_field(AuthField(
@@ -682,8 +682,8 @@ class BookStackConnector:
         ))
         .add_documentation_link(DocumentationLink(
             'Pipeshub Documentation',
-            'https://docs.pipeshub.com/connectors/linear/linear',
-            'pipeshub'
+            'https://docs.hupyy.com/connectors/linear/linear',
+            'hupyy'
         ))
         .with_redirect_uri("", False)
         .add_auth_field(AuthField(
@@ -725,8 +725,8 @@ class LinearConnector:
         ))
         .add_documentation_link(DocumentationLink(
             'Pipeshub Documentation',
-            'https://docs.pipeshub.com/connectors/s3/s3',
-            'pipeshub'
+            'https://docs.hupyy.com/connectors/s3/s3',
+            'hupyy'
         ))
         .with_redirect_uri("", False)
         .add_auth_field(AuthField(
@@ -793,8 +793,8 @@ class S3Connector:
         ))
         .add_documentation_link(DocumentationLink(
             'Pipeshub Documentation',
-            'https://docs.pipeshub.com/connectors/servicenow/servicenow',
-            'pipeshub'
+            'https://docs.hupyy.com/connectors/servicenow/servicenow',
+            'hupyy'
         ))
         .with_redirect_uri("", False)
         .add_auth_field(AuthField(
@@ -848,13 +848,13 @@ class ServiceNowConnector:
         .with_realtime_support(True)
         .add_documentation_link(DocumentationLink(
             "Local Filesystem Setup",
-            "https://docs.pipeshub.com/connectors/local-filesystem",
+            "https://docs.hupyy.com/connectors/local-filesystem",
             "docs"
         ))
         .add_documentation_link(DocumentationLink(
             'Pipeshub Documentation',
-            'https://docs.pipeshub.com/connectors/local-filesystem/setup',
-            'pipeshub'
+            'https://docs.hupyy.com/connectors/local-filesystem/setup',
+            'hupyy'
         ))
         .with_redirect_uri("", False)
         .add_auth_field(AuthField(
@@ -904,8 +904,8 @@ class LocalFilesystemConnector:
         ))
         .add_documentation_link(DocumentationLink(
             'Pipeshub Documentation',
-            'https://docs.pipeshub.com/connectors/zendesk/zendesk',
-            'pipeshub'
+            'https://docs.hupyy.com/connectors/zendesk/zendesk',
+            'hupyy'
         ))
         .with_redirect_uri("", False)
         .add_auth_field(AuthField(

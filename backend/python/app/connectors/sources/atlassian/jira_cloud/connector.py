@@ -427,8 +427,8 @@ class JiraClient:
         ))
         .add_documentation_link(DocumentationLink(
             'Pipeshub Documentation',
-            'https://docs.pipeshub.com/connectors/jira/jira',
-            'pipeshub'
+            'https://docs.hupyy.com/connectors/jira/jira',
+            'hupyy'
         ))
         .with_redirect_uri("connectors/oauth/callback/Jira", False)
         .add_auth_field(AuthField(

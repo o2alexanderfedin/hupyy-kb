@@ -55,7 +55,7 @@ async def main() -> None:
 
     #List all users
     print("\nList users:")
-    users = await data_source.list_users(filter={"email":"harshit@pipeshub.app"})
+    users = await data_source.list_users(filter={"email":"harshit@hupyy.app"})
     print(users)
 
     # response = await data_source.list_users(

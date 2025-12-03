@@ -1,4 +1,4 @@
-# Claude Code Guidelines for PipesHub AI Project
+# Claude Code Guidelines for Hupyy KB Project
 
 ## Task Execution Strategy
 
@@ -100,7 +100,7 @@ The project uses multiple databases:
 - **Host**: localhost:6333 (HTTP) / localhost:6334 (gRPC)
 - **API Key**: your_qdrant_secret_api_key
 
-## PipesHub Configuration
+## Hupyy KB Configuration
 
 ### Docker Volume Mounts
 - **Host Path**: `/Users/alexanderfedin/Projects/hapyy/pipeshub-ai-orig`

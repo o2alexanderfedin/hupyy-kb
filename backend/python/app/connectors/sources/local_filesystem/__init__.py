@@ -1,1 +1,1 @@
-"""Local Filesystem Connector for PipesHub."""
+"""Local Filesystem Connector for Hupyy KB."""

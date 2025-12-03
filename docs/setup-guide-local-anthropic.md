@@ -59,8 +59,8 @@ This configuration provides maximum data privacy with all processing happening l
 ### Step 1: Clone the Repository
 
 ```bash
-git clone https://github.com/pipeshub/pipeshub-ai.git
-cd pipeshub-ai
+git clone https://github.com/o2alexanderfedin/hupyy-kb.git
+cd hupyy-kb
 ```
 
 ### Step 2: Configure Environment Variables
