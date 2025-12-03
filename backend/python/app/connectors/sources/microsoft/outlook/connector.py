@@ -86,8 +86,8 @@ class OutlookCredentials:
         ))
         .add_documentation_link(DocumentationLink(
             'Pipeshub Documentation',
-            'https://docs.pipeshub.com/connectors/microsoft-365/outlook',
-            'pipeshub'
+            'https://docs.hupyy.com/connectors/microsoft-365/outlook',
+            'hupyy'
         ))
         .with_redirect_uri("connectors/Outlook/oauth/callback", False)
         .add_auth_field(AuthField(

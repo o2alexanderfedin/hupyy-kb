@@ -73,8 +73,8 @@ class OneDriveCredentials:
         ))
         .add_documentation_link(DocumentationLink(
             'Pipeshub Documentation',
-            'https://docs.pipeshub.com/connectors/microsoft-365/one-drive',
-            'pipeshub'
+            'https://docs.hupyy.com/connectors/microsoft-365/one-drive',
+            'hupyy'
         ))
         .with_redirect_uri("connectors/oauth/callback/OneDrive", False)
         .add_auth_field(AuthField(

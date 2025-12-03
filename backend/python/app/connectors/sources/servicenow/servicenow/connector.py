@@ -2,7 +2,7 @@
 ServiceNow Knowledge Base Connector
 
 This connector syncs knowledge base articles, categories, attachments, and permissions
-from ServiceNow into the PipesHub AI platform.
+from ServiceNow into the Hupyy KB AI platform.
 
 Synced Entities:
 - Users and Groups (for permissions)

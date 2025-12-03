@@ -7,7 +7,7 @@ from app.sources.external.zendesk.zendesk import ZendeskDataSource
 
 API_TOKEN = os.getenv("ZENDESK_API_TOKEN")
 EMAIL = os.getenv("ZENDESK_EMAIL") 
-SUBDOMAIN = "pipeshub"  # For https://pipeshub.zendesk.com/
+SUBDOMAIN = "hupyy"  # For https://hupyy.zendesk.com/
 
 async def main() -> None:
     if not API_TOKEN:

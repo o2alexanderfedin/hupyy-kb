@@ -366,7 +366,7 @@ async def main():
     # Load configuration from environment
     kafka_brokers = os.getenv("KAFKA_BROKERS", "localhost:9092")
     mongo_uri = os.getenv("MONGO_URI", "mongodb://localhost:27017")
-    mongo_db = os.getenv("MONGO_DB", "pipeshub")
+    mongo_db = os.getenv("MONGO_DB", "hupyy")
     redis_url = os.getenv("REDIS_URL", "redis://localhost:6379")
     hupyy_api_url = os.getenv(
         "HUPYY_API_URL", "https://verticalslice-smt-service-gvav8.ondigitalocean.app"

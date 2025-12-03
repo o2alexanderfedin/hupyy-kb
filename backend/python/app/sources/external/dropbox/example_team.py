@@ -122,7 +122,7 @@ async def main() -> None:
     # print(link)
 
     # #get team member info
-    # memebers = [UserSelectorArg("email","harshit@pipeshub.app")]
+    # memebers = [UserSelectorArg("email","harshit@hupyy.app")]
     # print("\nGetting team member info:")
     # team_member_info = await data_source.team_members_get_info_v2(memebers)
     # print(team_member_info)
@@ -201,7 +201,7 @@ async def main() -> None:
     #Call to arangodb
     # logger = create_logger("onedrive_connector")
     # base_dir = os.path.dirname(os.path.abspath(__file__))
-    # config_path = "/home/rogue/Programs/pipeshub-ai/backend/python/app/config/default_config.json"
+    # config_path = "/home/rogue/Programs/hupyy-kb/backend/python/app/config/default_config.json"
     # key_value_store = InMemoryKeyValueStore(logger, config_path)
     # config_service = ConfigurationService(logger, key_value_store)
     # kafka_service = KafkaConsumerManager(logger, config_service, None, None)

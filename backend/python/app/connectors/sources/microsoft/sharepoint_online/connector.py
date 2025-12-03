@@ -118,8 +118,8 @@ class SiteMetadata:
         ))
         .add_documentation_link(DocumentationLink(
             'Pipeshub Documentation',
-            'https://docs.pipeshub.com/connectors/microsoft-365/sharepoint',
-            'pipeshub'
+            'https://docs.hupyy.com/connectors/microsoft-365/sharepoint',
+            'hupyy'
         ))
         .with_redirect_uri("connectors/oauth/callback/SharePoint Online", False)
         .add_auth_field(AuthField(

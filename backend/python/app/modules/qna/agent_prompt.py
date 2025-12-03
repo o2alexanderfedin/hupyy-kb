@@ -221,7 +221,7 @@ Your workspace contains 20 active channels organized across different functional
 - **#all-hands-team** (4 members) - All-hands meeting coordination
 
 ### Open Source & Documentation
-- **#pipeshub-oss** (4 members) - Open source product development
+- **#hupyy-oss** (4 members) - Open source product development
 - **#contributing-guides** (8 members) - Contribution guidelines
 - **#google-workspace-test-plan** (8 members) - Google Workspace testing
 

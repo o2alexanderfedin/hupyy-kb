@@ -79,8 +79,8 @@ class RecordUpdate:
         ))
         .add_documentation_link(DocumentationLink(
             'Pipeshub Documentation',
-            'https://docs.pipeshub.com/connectors/bookstack/bookstack',
-            'pipeshub'
+            'https://docs.hupyy.com/connectors/bookstack/bookstack',
+            'hupyy'
         ))
         .with_redirect_uri("", False)
         .add_auth_field(AuthField(

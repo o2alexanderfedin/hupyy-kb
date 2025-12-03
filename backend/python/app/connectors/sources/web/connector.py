@@ -70,7 +70,7 @@ class WebApp(App):
         .with_realtime_support(False)
         .add_documentation_link(DocumentationLink(
             "Web Connector Guide",
-            "https://docs.pipeshub.ai/connectors/web",
+            "https://docs.hupyy.ai/connectors/web",
             "setup"
         ))
         .with_scheduled_config(True, 1440)  # Daily sync

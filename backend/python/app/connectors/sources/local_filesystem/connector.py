@@ -1,4 +1,4 @@
-"""Local Filesystem Connector for PipesHub."""
+"""Local Filesystem Connector for Hupyy KB."""
 
 import asyncio
 import hashlib
@@ -98,13 +98,13 @@ EXTENSION_TO_MIME = {
         .with_realtime_support(True)
         .add_documentation_link(DocumentationLink(
             "Local Filesystem Setup",
-            "https://docs.pipeshub.com/connectors/local-filesystem",
+            "https://docs.hupyy.com/connectors/local-filesystem",
             "docs"
         ))
         .add_documentation_link(DocumentationLink(
             'Pipeshub Documentation',
-            'https://docs.pipeshub.com/connectors/local-filesystem/setup',
-            'pipeshub'
+            'https://docs.hupyy.com/connectors/local-filesystem/setup',
+            'hupyy'
         ))
         .with_redirect_uri("", False)
         .add_auth_field(AuthField(

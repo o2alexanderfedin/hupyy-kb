@@ -219,7 +219,7 @@ def main() -> None:
         except GitlabGetError as e:
             print("Project Not Found (GitLab):", str(e))
             print(
-                "Tip: Provide numeric project ID or full path 'namespace/project' (e.g., 'your-username/pipeshub-ai-gitlab-datasource-test')."
+                "Tip: Provide numeric project ID or full path 'namespace/project' (e.g., 'your-username/hupyy-kb-gitlab-datasource-test')."
             )
             return
         except GitlabError as e:
