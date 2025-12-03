@@ -1,12 +1,16 @@
 # Connector Integration Playbook
 
+> **Historical Note**: This document was originally written for PipesHub and contains
+> references to the previous branding. The project is now known as Hupyy KB.
+> Code examples and technical content remain accurate.
+
 **Target Audience:** Developers with Python/TypeScript knowledge and OAuth understanding
 
 ---
 
 ## About This Playbook
 
-This playbook is your complete guide to building and integrating new data connectors into the PipesHub AI platform. Whether you're connecting Microsoft 365, Google Workspace, Atlassian products, or any other third-party service, this guide walks you through every step, from understanding the architecture to testing your implementation.
+This playbook is your complete guide to building and integrating new data connectors into the Hupyy KB platform. Whether you're connecting Microsoft 365, Google Workspace, Atlassian products, or any other third-party service, this guide walks you through every step, from understanding the architecture to testing your implementation.
 
 ---
 
